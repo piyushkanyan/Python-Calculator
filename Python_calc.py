@@ -13,15 +13,13 @@ while repeat.lower() == "yes":
         number = int(input("Enter the number: "))
     elif sign == "odd":
         number = int(input("Enter the number: "))
-    elif sign in ("max" , "min" , "%" , "**" , "/" , "+" , "-" , "*" , "//"):
+    elif sign in ("max", "min", "%", "**", "/", "+", "-", "*", "//"):
         number1 = int(input("Enter the first number: "))
         number2 = int(input("Enter the second number: "))
     else:
         print("ERROR")
         sign = input("Enter your choice (% ,+ ,- , * ,/ ,** ,// ,sr(Square Root) ,max (Maximum of Two numbers) ,min (Minimum of Two numbers) ,odd , even: ").lower()
         
-        
-
     if sign == "%":
         print(f"Modulo of {number1} % {number2} is: {number1 % number2}")
     elif sign == "+":
@@ -39,24 +37,24 @@ while repeat.lower() == "yes":
         print(f"Power of {number1} ** {number2} is: {number1 ** number2}")
     elif sign == "//":
         print(f"Sub Division of {number1} // {number2} is: {number1 // number2}")
-    elif sign.lower ()== "sr":
+    elif sign.lower() == "sr":
         print(f"Square root of {number} is: {math.sqrt(number)}")
     elif sign.lower() == "max":
         if number1 > number2:
             print(f"Maximum of {number1} and {number2} is: {number1}")
-        elif number2 > number1 :
+        elif number2 > number1:
             print(f"Maximum of {number1} and {number2} is: {number2}")
         else:
             print(f"Both numbers are same {number1} and {number2}")
     elif sign.lower() == "min":
-            if number1 < number2:
-                print(f"Minimum of {number1} and {number2} is: {number1}")
-            elif number2 < number1 :
-                print(f"Minimum of {number1} and {number2} is: {number2}")
-            else:
-                print(f"Both numbers are same {number1} and {number2}")
+        if number1 < number2:
+            print(f"Minimum of {number1} and {number2} is: {number1}")
+        elif number2 < number1:
+            print(f"Minimum of {number1} and {number2} is: {number2}")
+        else:
+            print(f"Both numbers are same {number1} and {number2}")
     elif sign.lower() == "even":
-        if number % 2 ==0:
+        if number % 2 == 0:
             print(f"The number {number} is even")
         else:
             print(f"The number {number} is odd")
@@ -65,7 +63,7 @@ while repeat.lower() == "yes":
             print(f"The number {number} is odd")
         else:
             print(f"The number {number} is even")
-            
+
     else:
         print("--> Please enter from this only (% ,+ ,- , * ,/ ,** ,//) <--")
 
