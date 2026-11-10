@@ -16,7 +16,9 @@ product_quantity_cart =[]
 while True:
     options = int(input("Choose an option: "))
     if options == 6:
-        print("Thanks for using this shopping cart program")
+        exit_sure =input("Are you sure you want to exit? (yes or no): ").lower().strip()
+        if exit_sure =="yes":
+            print("Thanks for using")
         break
     elif options == 1:
         for i in range(len(product_ids)):
@@ -83,26 +85,42 @@ while True:
 
             membership = input("Do you have a membership card? (yes or no): ").strip().lower()
             if membership == "yes":
-                print(f"You got 6% Discount, Now Total price becomes only {total * 0.06}")
-                if total > budget:
+                dis_total = total * 0.06
+                print(f"You got 6% Discount, Discount amount: {dis_total}")
+                amount_total = total - dis_total
+                print(f"Total amount you have to paid is: {amount_total}")
+                if amount_total > budget:
                     print("Warning!!")
-                    print(f"Your budget has been exceeded by {total - budget}")
+                    print(f"Your budget has been exceeded by {amount_total - budget}")
                                 
                 else:
-                    print(f"You bought everything in your budget: Budget was {budget} and total come {total * 0.06}")
-                    print("Thanks for purchasing, Enjoy sir/mam !")
+                    print(f"You bought everything in your budget: Budget was {budget} and total come {amount_total}")
             else:
-                print(f"If you buy the membership card, you will get 6% Discount on every shopping, now you toal price becomes {total}")
+                print(f"If you buy the membership card, you will get 6% Discount on every shopping, now your toal price becomes {total}")
                 if total > budget:
                     print("Warning!!")
                     print(f"Your budget has been exceeded by {total - budget}")
-                    warn = input("Are you OK! with the toal price? (yes or no)").lower().strip()     
-                    if warn =="yes":
+                    warn_ds = input("Are you OK! with the toal price? (yes or no)").lower().strip()     
+                    if warn_ds =="yes":
                         print("Enjoy")
                     else:
                         print("!! SECUIRTYYY !!")                
                 else:
                     print(f"You bought everything in your budget: Budget was {budget} and total come {total}")
-                    print("Thanks for purchasing, Enjoy sir/mam !")
+            payment_method = int(input("Payment Method: (Enter: 1 for Cash  ,2 for UPI  ,3 for Card): "))
+            if payment_method == 2:
+                card_num = (input("Enter card number (1234-5678-9345-5344): "))
+                print("Payment Successful")
+                print("Thank you for shopping")
+                break
+            elif payment_method == 3:
+                upi_id = input("Enter UPI ID ({username}@{bank ID}): ")
+                print("Payment Successful")
+                print("Thank you for shopping")
+                break
+            else:
+                print("Payment Successful")
+                print("Thank you for shopping")
+                break
     else:
         print("The option doesn't exist in program")        
