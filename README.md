@@ -1,77 +1,41 @@
-# Python Calculator
+# Python Projects
 
-A simple, interactive Python console-based calculator designed to perform common arithmetic operations and quick number checks. The program runs in the terminal, prompts the user for input, and continues until the user chooses to exit.
+A collection of small Python console applications created for learning and practice. Each project is kept in its own directory with its own instructions.
 
-## Features
+## Projects
 
-- Addition, subtraction, multiplication, and division
-- Modulus calculation
-- Power and floor division
-- Square root calculation
-- Maximum and minimum of two numbers
-- Odd/even number detection
-- Repeated calculation loop with input validation
+| Project | Description | Run command |
+|---|---|---|
+| [Calculator](calculator/README.md) | Console calculator with arithmetic operations and number checks. | `python calculator/main.py` |
+| [Shopping Cart](shopping-cart/README.md) | Interactive shopping cart and checkout simulation. | `python shopping-cart/main.py` |
+| [Travel Planner](travel-planner/README.md) | Suggests travel options based on distance and available transport. | `python travel-planner/main.py` |
 
 ## Requirements
 
 - Python 3.x
+- No third-party packages are required by the current projects.
 
-## How to Run
+## Getting Started
 
-1. Open a terminal or command prompt.
-2. Navigate to the project directory.
-3. Run:
+Clone the repository and run a project from the repository root using the command in its project README. Each project is a standalone console application.
 
-```bash
-python Python_calc.py
-```
-
-## Available Operations
-
-The program supports the following commands:
-
-- `+` — addition
-- `-` — subtraction
-- `*` — multiplication
-- `/` — division
-- `%` — modulus
-- `**` — exponentiation
-- `//` — floor division
-- `sr` — square root
-- `max` — maximum of two numbers
-- `min` — minimum of two numbers
-- `odd` — checks whether a number is odd
-- `even` — checks whether a number is even
-
-## Example Usage
+## Repository Structure
 
 ```text
-===============================
-         CALCULATOR
-===============================
-Enter your choice (% ,+ ,- , * ,/ ,** ,// ,sr(Square Root) ,max (Maximum of Two numbers) ,min (Minimum of Two numbers) ,odd , even: +
-Enter the first number: 12
-Enter the second number: 8
-Addition of 12 + 8 is: 20
-Do you want to do another calculation? (yes or no): yes
+Python-Projects/
+├── calculator/
+│   ├── README.md
+│   └── main.py
+├── shopping-cart/
+│   ├── README.md
+│   └── main.py
+├── travel-planner/
+│   ├── README.md
+│   └── main.py
+├── LICENSE
+└── README.md
 ```
-
-## Behavior
-
-- The calculator keeps running until the user enters `no` when prompted.
-- Invalid menu choices display an error message and prompt the user again.
-- Division by zero is handled safely with a clear message.
-- The program uses basic input validation for successful execution.
-
-## Project Files
-
-- `Python_calc.py` — main calculator logic
-- `LICENSE` — repository license
 
 ## License
 
-This project is distributed under the repository's license terms. Please review the `LICENSE` file for details.
-
-## Contributing
-
-Contributions, improvements, and bug fixes are welcome. If you'd like to enhance the calculator, consider improving the user interface, adding more mathematical functions, or refining input validation.
+See [LICENSE](LICENSE) for the applicable terms.
