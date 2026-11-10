@@ -6,9 +6,9 @@ A collection of small Python console applications created for learning and pract
 
 | Project | Description | Run command |
 |---|---|---|
-| [Calculator](calculator/README.md) | Console calculator with arithmetic operations and number checks. | `python calculator/main.py` |
-| [Shopping Cart](shopping-cart/README.md) | Interactive shopping cart and checkout simulation. | `python shopping-cart/main.py` |
-| [Travel Planner](travel-planner/README.md) | Suggests travel options based on distance and available transport. | `python travel-planner/main.py` |
+| [Calculator](calculator/README.md) | Console calculator with arithmetic operations and number checks. | `python calculator/Python_calc.py` |
+| [Shopping Cart](shopping-cart/README.md) | Interactive shopping cart and checkout simulation. | `python shopping-cart/shoppingcart.py` |
+| [Travel Planner](travel-planner/README.md) | Suggests travel options based on distance and available transport. | `python travel-planner/travel.py` |
 
 ## Requirements
 
@@ -25,13 +25,13 @@ Clone the repository and run a project from the repository root using the comman
 Python-Projects/
 ├── calculator/
 │   ├── README.md
-│   └── main.py
+│   └── Python_calc.py
 ├── shopping-cart/
 │   ├── README.md
-│   └── main.py
+│   └── shoppingcart.py
 ├── travel-planner/
 │   ├── README.md
-│   └── main.py
+│   └── travel.py
 ├── LICENSE
 └── README.md
 ```

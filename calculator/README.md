@@ -12,7 +12,7 @@ A console-based calculator supporting basic arithmetic, square roots, maximum/mi
 From the repository root:
 
 ```bash
-python calculator/main.py
+python calculator/Python_calc.py
 ```
 
 Enter an operation when prompted: `+`, `-`, `*`, `/`, `%`, `**`, `//`, `sr`, `max`, `min`, `odd`, or `even`. The calculator continues until you respond `no` to the repeat prompt.

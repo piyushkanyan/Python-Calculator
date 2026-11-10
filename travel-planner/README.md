@@ -12,7 +12,7 @@ A console-based travel planner that recommends a travel mode based on trip dista
 From the repository root:
 
 ```bash
-python travel-planner/main.py
+python travel-planner/travel.py
 ```
 
 Enter the requested trip distance and transportation details when prompted. The estimates are illustrative and should not be treated as real-world route or fare data.
