@@ -1,4 +1,3 @@
-#LISTS
 movie_names = [
     "Avengers: Endgame",
     "Interstellar",
@@ -26,12 +25,46 @@ movie_names = [
     "Moana",
     "Toy Story 4",
     "3 Idiots",
-    "PK",
+    "Pk",
     "Dangal",
     "Kalki 2898 AD",
     "Bahubali",
     "Ramayana",
     "Dhurandhar"
+]
+movies_ID = [
+    "MX01",
+    "MX02",
+    "MX03",
+    "MX04",
+    "MX05",
+    "MX06",
+    "MX07",
+    "MX08",
+    "MX09",
+    "MX10",
+    "MX11",
+    "MX12",
+    "MX13",
+    "MX14",
+    "MX15",
+    "MX16",
+    "MX17",
+    "MX18",
+    "MX19",
+    "MX20",
+    "MX21",
+    "MX22",
+    "MX23",
+    "MX24",
+    "MX25",
+    "MX26",
+    "MX27",
+    "MX28",
+    "MX29",
+    "MX30",
+    "MX31",
+    "MX32",
 ]
 movie_duration = [
     "3h 1m",
@@ -120,11 +153,14 @@ snacks_prices = [
     40,120,130,60,50
 ]
 Booking_ids = []
-customer_names = []
-Mobile_number = []
+age_cart = []
+customer_names_cart = []
+Mobile_number_cart = []
 Booking_history = []
 Customer_cart = []
-Feedback = []
+Feedback_cart = []
+number_of_tickets_cart = []
+seat_number_asking_cart = []
 
 seat_number = [
     "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10",
@@ -134,27 +170,54 @@ seat_number = [
     "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", "E10",
     "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10"
 ]
-genres = (
-    "Action",
-    "Comedy",
-    "Drama",
-    "Sci-Fi",
-    "Horror",
-    "Adventure",
-    "Fantasy",
-    "Animation",
-    "Thriller",
-    "Romance"
-)
-Payment_method = (
+# Genres align by index with movie_names.
+genres = [
+    "Action, Adventure, Sci-Fi",
+    "Adventure, Drama, Sci-Fi",
+    "Action, Sci-Fi, Thriller",
+    "Action, Crime, Drama",
+    "Action, Adventure, Sci-Fi",
+    "Biography, Drama, History",
+    "Crime, Drama, Thriller",
+    "Drama, Romance",
+    "Action, Adventure, Sci-Fi",
+    "Action, Adventure, Sci-Fi",
+    "Action, Adventure, Fantasy",
+    "Action, Adventure, Sci-Fi",
+    "Action, Adventure, Sci-Fi",
+    "Action, Crime, Drama",
+    "Action, Adventure, Thriller",
+    "Action, Crime, Thriller",
+    "Action, Crime, Thriller",
+    "Adventure, Animation, Comedy",
+    "Adventure, Animation, Comedy",
+    "Action, Adventure, Comedy",
+    "Adventure, Drama, Sci-Fi",
+    "Adventure, Animation, Drama",
+    "Adventure, Animation, Comedy",
+    "Adventure, Animation, Comedy",
+    "Adventure, Animation, Comedy",
+    "Comedy, Drama",
+    "Comedy, Drama, Sci-Fi",
+    "Biography, Drama, Sport",
+    "Action, Fantasy, Sci-Fi",
+    "Action, Drama, Fantasy",
+    "Fantasy, Mythology",
+    "Action, Crime, Thriller",
+]
+Payment_method_cart = (
     "Cash",
     "UPI",
     "Credit Card",
     "Debit-Card",
     "Net-Banking"
 )
+debit_card_cart = []
+upi_cart = []
+credit_card_cart = []
+net_banking_cart = []
 
-membership_type = (
+membership_type_cart = (
     "None",
     "Silver",
     "Gold",
@@ -169,3 +232,139 @@ show_timings = (
     "09:30 PM",
     "11:45 PM"
 )
+
+
+print("===================================================================")
+print("                    SMART MOVIE THEATRE SYSTEM                     ")
+print("===================================================================")
+print()
+print("---------------------------CUSTOMER MENU---------------------------")
+print()
+print("1. View All Movies")
+print("2. Search Movie")
+print("3. Book Movie Ticket")
+print("4. Cancel Booking")
+print("5. View My Booking")
+print("6. View Booking History")
+print()
+print("----------------------------SNACKS MENU----------------------------")
+print()
+print("7. View Snacks Menu")
+print("8. Add Snacks to Cart")
+print("9. Remove Snacks")
+print("10. View Cart")
+print("11. Clear Cart")
+print()
+print("--------------------------MEMBERSHIP MENU--------------------------")
+print()
+print("12. View Membership Plans")
+print("13. Buy Membership")
+print("14. Check Membership Status")
+print()
+print("---------------------------FEEDBACK MENU---------------------------")
+print()
+print("15. Rate A Movie")
+print("16. Give Theatre Feedback")
+print("17. View Movie Ratings")
+print()
+print("---------------------------PAYMENT MENU----------------------------")
+print()
+print("18. Checkout")
+print("19. Select Payment Method")
+print("20. Print Receipt")
+print()
+print("----------------------------ADMIN MENU-----------------------------")
+print()
+print("21. Add New Movie")
+print("22. Remove Movie")
+print("23. Update Ticket Price")
+print("24. Update Movie Rating")
+print("25. Add Show Timing")
+print("26. Remove Show Timing")
+print("27. View Theatre Report")
+print()
+print("-------------------------------EXIT---------------------------------")
+print()
+print("28. Exit")
+print()
+
+while True:
+    choice = int(input("Please Enter your choice: "))
+    if choice == 1:
+        print()
+        print("------------------------------------- You choose 1 option (View All Movies) ----------------------------------------")
+        print()
+        print("="* 120)
+        print(f"{"Movie ID":<13}{"Movie Name":<28}{"Genre":<35}{"Duration Time":<18}{"Price":<12}{"Rating"}")
+        print("="* 120)
+        for i in range(len(movie_names)):
+            print(f"{movies_ID[i]:<13}{movie_names[i]:<28}{genres[i]:<35}{movie_duration[i]:<18}{ticket_prices[i]:<12}{ratings[i]}")
+    elif choice == 2:
+        while True:
+            search_movie = input("Enter the movie name you want to search (q to quit): ").title().strip()
+            print()
+            if search_movie in movie_names:
+                exist_movie_name = movie_names.index(search_movie)
+                print("="* 120)
+                print(f"{"Movie ID":<13}{"Movie Name":<28}{"Genre":<35}{"Duration Time":<18}{"Price":<12}{"Rating"}")
+                print("="* 120)
+                print(f"{movies_ID[exist_movie_name]:<13}{movie_names[exist_movie_name]:<28}{genres[exist_movie_name]:<35}{movie_duration[exist_movie_name]:<18}{ticket_prices[exist_movie_name]:<12}{ratings[exist_movie_name]}")
+                break
+            elif search_movie == "Q":
+                break
+            else:
+                print(f"This movie {search_movie} is not available")
+    elif choice == 3:
+        while True:
+            purchasing_movie_id = input("Enter the Movie ID to buy (q to stop): ").upper().strip()
+            if purchasing_movie_id in movies_ID:
+                while True:
+                    seat_number_asking = input("Type the seat number you want (Type s to show seats): ").upper()
+                    if seat_number_asking.upper().strip() == "S":
+                        print("="*55)
+                        for seats in seat_number:
+                            print(f"{seats:<5}",end="")
+                            if seats.endswith("10"):
+                                print()
+                        print("="*55)
+                    else:
+                        print(f"{seat_number_asking} is available and added to cart")
+                        seat_number_asking_cart.append(seat_number_asking)
+                        how_much_tickets = int(input("Enter the tickets you want to buy: "))
+                        if how_much_tickets == 1:
+                            print("Added to cart successfully")
+                            number_of_tickets_cart.append(how_much_tickets)
+                        else:
+                            print("Added to cart successfully")
+                            number_of_tickets_cart.append(how_much_tickets)
+                        break
+                break   
+            
+              
+            elif purchasing_movie_id.lower().strip() =="q":
+                break
+            else:
+                print(f"Invalid Movie {purchasing_movie_id} ID")
+        customer_names = input("Enter you name: Mr/Mrs ").title().strip()
+        customer_names_cart.append(customer_names)
+
+        age = int(input("Enter your age: "))
+        age_cart.append(age)
+       
+        mobile_number = int(input("Enter you mobile number: +91 "))
+        if mobile_number > 10 and mobile_number < 10:
+            print("The number cannot be greater and less than 10")
+            mobile_number = int(input("Enter you mobile number: +91 "))
+            Mobile_number_cart.append(mobile_number)
+        else:
+            Mobile_number_cart.append(mobile_number)
+        print()
+        print("---------PAYMENT METHODS---------")
+        for i in range(len(Payment_method_cart)):
+            print(f"{i}. {Payment_method_cart[i]}")
+        print("----------------------------------")
+        payment_method = int(input("Choose the Payment Method (0-4): "))
+        if payment_method == 0:
+            print()
+
+
