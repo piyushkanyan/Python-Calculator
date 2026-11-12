@@ -1,3 +1,6 @@
+import time #module(time) - import time , import math , import datetime , import random , from math import statistics.
+
+
 movie_names = [
     "Avengers: Endgame",
     "Interstellar",
@@ -215,7 +218,8 @@ Payment_method_cart = (
 debit_card_cart = []
 upi_cart = []
 credit_card_cart = []
-net_banking_cart = []
+net_banking_username_cart = []
+net_banking_password_cart = []
 
 membership_type_cart = (
     "None",
@@ -358,13 +362,106 @@ while True:
             Mobile_number_cart.append(mobile_number)
         else:
             Mobile_number_cart.append(mobile_number)
+        print("-"*60)
+        position_price_of_input_movie = movies_ID.index(purchasing_movie_id)
+        price_of_input_movieID = ticket_prices[position_price_of_input_movie]
+
+        for i in range(len(membership_type_cart)):
+            print(f"{i}.{membership_type_cart[i]}")
+        print("-"*60)
+        membership_type = int(input("Please Select your membership: "))
+        if membership_type == 0:
+            print("No membership discount applied.")
+            new_total_price = price_of_input_movieID
+            print(f"Total Amount: ${new_total_price}")
+        elif membership_type == 1:
+            print("Silver membership discount applied.")
+            discount_price = price_of_input_movieID * 0.05
+            print(f"Discount: ${discount_price}")
+            new_total_price = price_of_input_movieID - discount_price
+            print(f"New Total Amount: ${new_total_price}")
+        elif membership_type == 2:
+            print("Gold membership discount applied.")
+            discount_price = price_of_input_movieID * 0.15
+            print(f"Discount: ${discount_price}")
+            new_total_price = price_of_input_movieID - discount_price
+            print(f"New Total Amount: ${new_total_price}")
+        elif membership_type == 3:
+            print("Platinum membership discount applied.")
+            discount_price = price_of_input_movieID * 0.30
+            print(f"Discount: ${discount_price}")
+            new_total_price = price_of_input_movieID - discount_price
+            print(f"New Total Amount: ${new_total_price}")
+        else:
+            print("Invalid membership option.")
         print()
         print("---------PAYMENT METHODS---------")
         for i in range(len(Payment_method_cart)):
             print(f"{i}. {Payment_method_cart[i]}")
         print("----------------------------------")
+        print()
         payment_method = int(input("Choose the Payment Method (0-4): "))
         if payment_method == 0:
+            print("\nCash Payment Selected")
+            print(f"Amount to Pay: ${new_total_price}")
+            print(".... Loading")
+            time.sleep(3)
+            print("Your ticket has been booked successfully")
+            print("Enjoy your movie!")
+        elif payment_method == 1:
+            print("\nUPI Payment Selected")
+            print(f"Amount to Pay: ${new_total_price}")
+            upi_input = input("Enter the UPI ID: ").strip().lower()
+            upi_cart.append(upi_input)
+            print("... Loading")
+            time.sleep(3)
+            print("Verifying UPI ID")
+            time.sleep(1)
+            print("Your ticket has been booked successfully")
+            print("Enjoy your movie!")
+        elif payment_method == 2:
+            print("\nCredit card Payment Selected")
+            print(f"Amount to Pay: ${new_total_price}")
+            credit_input = int(input("Enter the Card number: "))
+            credit_card_cart.append(credit_input)
+            print("... Loading")
+            time.sleep(3)
+            print("Verifying Card number")
+            time.sleep(1)
+            print("Your ticket has been booked successfully")
+            print("Enjoy your movie!")
+        elif payment_method == 3:
+            print("\nDebit card Payment Selected")
+            print(f"Amount to Pay: ${new_total_price}")
+            debit_input = int(input("Enter the Card number: "))
+            debit_card_cart.append(debit_input)
+            print("... Loading")
+            time.sleep(3)
+            print("Verifying Card number")
+            time.sleep(1)
+            print("Your ticket has been booked successfully")
+            print("Enjoy your movie!")
+        elif payment_method == 4:
+            print("===================NET BANKING=================")
             print()
-
-
+            print("Select Your Bank")
+            print("1. SBI")
+            print("2. HDFC")
+            print("3. ICICI")
+            print("4. Axis Bank") 
+            print("5. Punjab National Bank")
+            print()
+            asking_banking_option = int(input("Enter your choice: "))
+            if asking_banking_option > 5 and asking_banking_option <1:
+                print("Error!!")
+                asking_banking_option = int(input("Enter your choice: "))
+            elif asking_banking_option == 1 or 2 or 3 or 4 or 5:
+                asking_username_id = input("Enter User ID: ").lower().strip()
+                password_asking = input("Enter Password: ").strip()
+                print("Connecting Bank...")
+                time.sleep(3)
+                print("Payment Successfull")
+                time.sleep(1)
+                print("Your ticket has been booked successfully")
+                print("Enjoy your movie!")
+        
